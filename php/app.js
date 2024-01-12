@@ -28,13 +28,11 @@ document.addEventListener('DOMContentLoaded', function () {
             clearInterval(countdownInterval);
             countdownElement.innerHTML = 'Le compte à rebours est terminé!';
             document.getElementById('surveyLink').classList.remove('hidden');
-        }
-
-        // Si le compte à rebours est terminé, affichez un message
-        if (timeDifference < 0) {
-            clearInterval(countdownInterval);
-            countdownElement.innerHTML = 'Le compte à rebours est terminé!';
-            document.getElementById('restartCountdownBtn').disabled = false;
+            // Réinitialisez la date du compte à rebours ici
+            countdownDate = new Date('2024-08-16T23:59:59').getTime();
+            localStorage.setItem('countdownDate', countdownDate);
+            // Désactivez le bouton de redémarrage après la réinitialisation
+            document.getElementById('restartCountdownBtn').disabled = true;
         }
     }
 
@@ -50,9 +48,12 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Bouton pour relancer le compte à rebours
     document.getElementById('restartCountdownBtn').addEventListener('click', function () {
+        // Réinitialisez la date du compte à rebours ici
         countdownDate = new Date('2024-08-16T23:59:59').getTime();
         localStorage.setItem('countdownDate', countdownDate);
-        updateCountdown();
+        // Désactivez le bouton de redémarrage après la réinitialisation
         this.disabled = true;
+        // Mettez à jour le compte à rebours immédiatement après la réinitialisation
+        updateCountdown();
     });
 });

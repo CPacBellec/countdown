@@ -14,8 +14,9 @@
     <button id="restartCountdownBtn" class="bg-green-500 text-white px-4 py-2" disabled>Relancer le compte à rebours</button>
 
     <div class="my-5 flex">
-        <a href="countdown_page.html">Lien vers le sondage</a>
+        <a href="countdown_page.php">Lien vers le sondage</a>
     </div>
+
 
   <script src="app.js"></script>
 </body>
