@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', function () {
     // Date limite du compte à rebours (remplacez par votre date)
-    const countdownDate = new Date('2023-12-31T23:59:59').getTime();
+    const countdownDate = new Date('2024-08-16T23:59:59').getTime();
 
     // Mettez à jour le compte à rebours toutes les 1 seconde
     const countdownInterval = setInterval(function () {
